@@ -4,7 +4,7 @@ powerMenuMadeByMePackage = pkgs.writeScriptBin "powerMenuMadeByMe" ''
     #!${pkgs.bash}/bin/bash
     
     rofi_command() {
-      ${pkgs.rofi}/bin/rofi -dmenu -i -config "$HOME/.config/rofi/power.rasi"
+      ${pkgs.rofi}/bin/rofi -dmenu -i -config "$HOME/.config/rofi/powermenu.rasi"
     }
 
     shutdown=" 󰐥 | Shutdown"

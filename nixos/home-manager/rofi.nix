@@ -1,6 +1,14 @@
 { pkgs, ... }:{
   home.packages = with pkgs; [ rofi ];
 
+  # general settings
+  home.file.".config/rofi/config.rasi".text = ''
+    configuration {
+        pid: "/tmp/rofi.pid";
+    }
+  '';
+
+
   #powermenu
   home.file.".config/rofi/powermenu.rasi" = {
     source = ../resources/dots/rofi/power.rasi;
@@ -18,8 +26,6 @@
     source = ../resources/dots/rofi/launchers/type-4/shared/fonts.rasi;
     force = true;
   };
-
-  
 
   # colors for the configs imported from https://github.com/adi1090x/rofi
   home.file.".config/rofi/shared/colors.rasi" = {

@@ -4,9 +4,11 @@
     # Allow appimage files to be run
     appimage= {
       enable = true;
-      binfmt = true;
+      # binfmt = true;
     };
+
     firefox.enable = true;
+
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;

@@ -2,11 +2,11 @@
 ![desktop2](image-1.png)
 ![applauncher](image-2.png)
 
-This repository is home to my nixos configuration, it contains configs for homemanger and nixos. homemanager updates automatically `nixos-rebuild`.
+This repository is home to my nixos configuration, it contains configs for homemanger and nixos. homemanager updates automatically with `nixos-rebuild`.
 
 the main working environment is niri, hyprland and gnome exist as fallback.
 
-some programs are installed inside distrobox containers, ai tools which need a mutable environment, some packages that are broken, etc the full list is availbale [here](nixos/manual.md)
+some programs are installed inside distrobox containers, ai tools which need a mutable environment, some packages that are broken, etc the full list is availabale [here](nixos/manual.md)
 
 # initial setup
 

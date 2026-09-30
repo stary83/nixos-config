@@ -61,6 +61,7 @@ in {
 
     inputs.prismlauncher.packages.${stdenv.hostPlatform.system}.prismlauncher
     inputs.matugen.packages.${stdenv.hostPlatform.system}.default
+    
 
     brightnessctl # allows to control brightness
     playerctl # allows for video/audio playback control

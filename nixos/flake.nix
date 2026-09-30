@@ -55,6 +55,11 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # proxy client
+    zedsecure = {
+      url = "github:CluvexStudio/ZedSecure";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -86,8 +91,8 @@
           ];
         }
 
-	inputs.stylix.nixosModules.stylix
-	inputs.nixvim.nixosModules.nixvim
+	      inputs.stylix.nixosModules.stylix
+	      inputs.nixvim.nixosModules.nixvim
         ./hosts/${host}/configuration.nix
 
 

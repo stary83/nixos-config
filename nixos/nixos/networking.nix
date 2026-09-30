@@ -4,7 +4,7 @@ let
 in {
   imports = [
     ./proxychains.nix
-    ./privoxy.nix
+    # ./privoxy.nix
     ./certificates.nix
     # --------------------- nixpkgs overlays -------------------------
     packages/masterDnsVpn.nix
@@ -27,6 +27,8 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
+    
+    inputs.zedsecure.packages.${stdenv.hostPlatform.system}.default
     networkmanagerapplet
     libreswan
     strongswan

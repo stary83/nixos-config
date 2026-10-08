@@ -1,10 +1,6 @@
 { pkgs, ... }: 
 {
   services = {
-    # Enable the Gnome Dekstop Environment & x11 windowing system
-    desktopManager = {
-      gnome.enable = true;
-    };
 
     displayManager = {
       gdm.enable = true;
@@ -36,6 +32,13 @@
 
     gvfs.enable = true;
     udisks2.enable = true;
+
+    udev = { 
+      enable = true;
+      extraRules = ''
+        SUBSYSTEM=="input", ENV{SYSTEMD_WANTS}+="input@%k.service"
+      '';
+    };
   };
 
 }

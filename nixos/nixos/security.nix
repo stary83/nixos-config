@@ -2,7 +2,11 @@
 
 {
   security.rtkit.enable = true;
-  security.pki = {
+  security = {
+    pki = {};
+    polkit = {
+      enable = true;
+    };
   };
 
 }

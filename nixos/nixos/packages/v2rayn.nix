@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  version = "7.24.9";
+  version = "7.25.4";
 
   # Prebuilt binary, not nixpkgs' `v2rayn`: that builds from source, and the
   # source repo ships no cores at all, so it can never find one.
@@ -84,7 +84,7 @@ in
 
         src = prev.fetchurl {
           url = "https://github.com/2dust/v2rayN/releases/download/${version}/v2rayN-linux-64.zip";
-          hash = "sha256-iEf3f8H36Pmv7QeQcHMm7GaF98PxC2PdekN3L0v+X+8=";
+          hash = "sha256-vx1VLnxnEeSWfVcLi+cJX5UZNY4+pNfDoYqBvaOGr0g=";
         };
 
         nativeBuildInputs = with prev; [
@@ -166,10 +166,6 @@ in
           })
         ];
 
-        passthru = {
-          updateScript = prev.nix-update-script { };
-        };
-
         meta = with prev.lib; {
           description = "v2rayN - Powerful GUI client for Xray / sing-box / mihomo";
           homepage = "https://github.com/2dust/v2rayN";
@@ -206,7 +202,8 @@ in
 
   # TUN installs a default route, so replies return on a different interface
   # than they left by; strict reverse-path filtering drops exactly that.
-  networking.firewall.checkReversePath = "loose";
+  # networking.firewall.checkReversePath = "loose";
+  # added above line in networking.nix
 
   # ── Updating ─────────────────────────────────────────────────────────
   # Cores: bump version + hash in packages/xray.nix, singbox.nix, mihomo.nix,

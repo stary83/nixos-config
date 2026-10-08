@@ -1,27 +1,38 @@
 { pkgs, ... }: {
+
+  home.packages = with pkgs; [
+    papirus-folders
+  ];
+
   gtk = {
     enable = true;
-    theme = null;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
+      };
+    };
+    cursorTheme = {
+      name = "Catppuccin-Mocha-Light-Cursors";
+      package = pkgs.catppuccin-cursors.mochaLight;
+    };
+    gtk3 = {
+      extraConfig.gtk-application-prefer-dark-theme = true;
+    };
   };
 
-  #home.file.".config/gtk-2.0" = {
-  #  source = ../../resources/dots/gtk2;
-  #  recursive = true;
-  #  force = true;
-  #};
-  #home.file.".config/gtk-3.0" = {
-  #  source = ../../resources/dots/gtk3;
-  #  recursive = true;
-  #  force = true;
-  #};
-  #home.file.".config/gtk-4.0" = {
-  #  source = ../../resources/dots/gtk4;
-  #  recursive = true;
-  #  force = true;
-  #};
-  #home.file.".themes/Gruvbox-BL-MB-Dark" = {
-  #  source = ../../resources/dots/Gruvbox-BL-MB-Dark;
-  #  recursive = true;
-  #  force = true;
-  #};
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Catppuccin-Mocha-Light-Cursors";
+    package = pkgs.catppuccin-cursors.mochaLight;
+    size = 16;
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      # gtk-theme = "Breeze-Dark";
+      color-scheme = "prefer-dark";
+    };
+  };
 }

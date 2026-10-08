@@ -8,12 +8,7 @@
     };
 
     firefox.enable = true;
-
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
-      withUWSM = true;
-    };
+    
     # configurations in home-manager
     niri = {
       enable = true;
@@ -31,13 +26,20 @@
       };
     };
 
-
     xwayland.enable = true;
 
     localsend = {
       enable = true;
       openFirewall = true;
     };
+
+    # --------- Hyprland ---------
+    # hyprland = {
+    #   enable = true;
+    #   package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+    #   withUWSM = true;
+    # };
+    # ----------------------------
   };
 
 }

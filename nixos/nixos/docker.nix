@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -20,5 +20,5 @@
   };
 
   # Optional: Add your user to the "docker" group to run docker without sudo
-  users.users.stary.extraGroups = [ "docker" ];
+  users.users.${host}.extraGroups = [ "docker" ];
 }

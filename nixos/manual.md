@@ -2,10 +2,15 @@
 
 either their files, or installation is not decalaritve:
 
-- odysseus
-- opencode
-- freebuff
-- v2rayn
+- freebuff (distrobox)
+- odysseus (distrobox)
+- opencode (distrobox)
+- open-webui (distrobox)
+- mcpo (distrobox)
+- mcp-shell (distrobox)
+- searxng (docker)
+
+- pattn (distrobox)
 - prismlauncher instances
 - freetube
 - ssh keys

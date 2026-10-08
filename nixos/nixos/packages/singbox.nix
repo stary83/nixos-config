@@ -39,11 +39,11 @@
       # ──────────────────────────────────────────────────────────────
       sing-box = prev.stdenv.mkDerivation rec {
         pname = "sing-box";
-        version = "1.13.21";
+        version = "1.14.2";
 
         src = prev.fetchurl {
           url = "https://github.com/SagerNet/sing-box/releases/download/v${version}/sing-box-${version}-linux-amd64-musl.tar.gz";
-          hash = "sha256-iGSrs7cqa0BERajCUYPHnPpEqA3vDXdax5V450+5gOc=";
+          hash = "sha256-j2y0vPlNKzPGXVLg1bFC2ympODNvH/cmfzl6w3WPwpc=";
         };
 
         nativeBuildInputs = [ prev.gnutar prev.xz ];
@@ -63,8 +63,6 @@
           install -Dm755 sing-box $out/bin/sing-box
           runHook postInstall
         '';
-
-        passthru.updateScript = prev.nix-update-script { };
 
         meta = with prev.lib; {
           description = "Universal proxy platform (prebuilt static musl binary)";

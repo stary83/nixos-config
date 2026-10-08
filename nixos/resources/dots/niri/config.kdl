@@ -138,7 +138,6 @@ environment {
     DISPLAY ":0"
     TERMINAL "ghostty"
     TERM "ghostty"
-    XCURSOR_THEME "Bibata-Modern-Classic"
     XCURSOR_SIZE "18"
     XDG_CURRENT_DESKTOP "Niri"
     XDG_SESSION_DESKTOP "Niri"
@@ -234,7 +233,7 @@ switch-events {
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "dunst"
-spawn-at-startup "matugen" "image" "~/.current_wallpaper"
+spawn-at-startup "swww" "img" "--transition-type" "center" "~/.current_wallpaper"
 
 prefer-no-csd
 

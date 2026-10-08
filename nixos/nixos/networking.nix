@@ -9,9 +9,7 @@ in {
     # --------------------- nixpkgs overlays -------------------------
     packages/masterDnsVpn.nix
     packages/stormdnsclient.nix
-    packages/senpai-scanner.nix
-    # packages/vaydns.nix 
-    # packages/windscribe.nix
+    packages/senpai-scanner.nix 
     # packages/onionhop.nix
     # packages/dns-hop.nix
     # packages/aether.nix
@@ -81,15 +79,16 @@ in {
 
 
   networking = {
-    hostName = "StarConst"; # Define your hostname.
+    hostName = "StarConst";
     firewall = {
       enable = true;
+      checkReversePath = "loose";
       allowedTCPPorts = [ ];
       allowedUDPPorts = [ ];
       allowedTCPPortRanges = [
         # { 
-          # from = 18000;
-	        # to = 18010;
+        #   from = 18000;
+	      #   to = 18010;
 	      # }
       ];
       allowedUDPPortRanges = [];

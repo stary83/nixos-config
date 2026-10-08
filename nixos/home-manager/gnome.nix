@@ -1,3 +1,4 @@
+# Must be use in combination with the nixos module gnome.nix
 { config, inputs, pkgs, ... }:
 {
   dconf = {
@@ -23,12 +24,4 @@
       };
     };
   };
-  # programs = {
-  #   gnome = {
-  #     enable = true;
-  #     settings = {
-  #
-  #     };
-  #   };
-  # };
 }

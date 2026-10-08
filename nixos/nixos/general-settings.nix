@@ -18,8 +18,6 @@
       source-sans
       font-awesome
       openmoji-color
-      #xb-roya # Custom XB Roya font
-      #xb-titre # Custom XB Titre font
     ];
   };
 
@@ -28,8 +26,8 @@
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
       
-      terminal = "ghostty";
-      term = "ghostty";
+      TERMINAL = "ghostty";
+      TERM = "ghostty";
     };
     sessionVariables = {
       # for running qt based applications

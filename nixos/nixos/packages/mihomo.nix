@@ -26,11 +26,11 @@
       # ──────────────────────────────────────────────────────────────
       mihomo = prev.stdenv.mkDerivation rec {
         pname = "mihomo";
-        version = "1.19.30";
+        version = "1.19.32";
 
         src = prev.fetchurl {
           url = "https://github.com/MetaCubeX/mihomo/releases/download/v${version}/mihomo-linux-amd64-v1-v${version}.gz";
-          hash = "sha256-y+VT0DGaQUvTo3LFl2olIVWyxIgrZrzoik1rupVxpVM=";
+          hash = "sha256-MG+B5yPmDOa4KImab+g+HQDp7O+y3I1NhJMSpbwA79w=";
         };
 
         # the asset is a bare gzip of a single binary, not a tarball
@@ -50,14 +50,12 @@
           runHook postInstall
         '';
 
-        passthru.updateScript = prev.nix-update-script { };
-
         meta = with prev.lib; {
           description = "Rule-based tunnel in Go (prebuilt static binary)";
           homepage = "https://github.com/MetaCubeX/mihomo";
           license = licenses.gpl3Only;
           sourceProvenance = with sourceTypes; [ binaryNativeCode ];
-          platforms = [ "x86_64-linux" ];
+          platforms = platforms.linux;
           mainProgram = "mihomo";
         };
       };

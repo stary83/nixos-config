@@ -1,38 +1,31 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
-    papirus-folders
   ];
 
   gtk = {
     enable = true;
+    theme = {
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
+    };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
     };
-    cursorTheme = {
-      name = "Catppuccin-Mocha-Light-Cursors";
-      package = pkgs.catppuccin-cursors.mochaLight;
-    };
+
     gtk3 = {
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
-  };
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "Catppuccin-Mocha-Light-Cursors";
-    package = pkgs.catppuccin-cursors.mochaLight;
-    size = 16;
+    gtk4.theme = null;
+    
   };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      # gtk-theme = "Breeze-Dark";
       color-scheme = "prefer-dark";
     };
   };
+
 }

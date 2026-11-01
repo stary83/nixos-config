@@ -7,12 +7,18 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./theme/theme.nix
+    # ./utilitys/swayidle.nix
+    ./utilitys/mako.nix
+    ./utilitys/waybar.nix
+    ./utilitys/authentication-agent.nix
+    ./utilitys/lockScreenMadeByMe.nix
+    ./utilitys/applauncherMenuMadeByMe.nix
 
     # -------- animations --------
     # ./animations/default.nix
     ./animations/flowy.nix
     # ----------------------------
+    ./theme/theme.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -20,10 +26,10 @@
     configType = "hyprlang";
     settings = {
       exec-once = [
-        "swww-daemon"
-        "waybar &"
-        "dunst"
-        "matugen image ${config.stylix.image}"
+        "awww-daemon"
+        "waybar"
+        "mako"
+        "awww img --transition-type center ~/.current_wallpaper"
       ];
 
       # source file is generated with matugen
@@ -45,7 +51,7 @@
         "$mainMod, G, togglegroup,"
         #"Alt, Return, fullscreen,"
         # $mainMod, Escape, exec, swaylock # launch lock screen
-        "$mainMod, Escape, exec, hyprlock"
+        "$mainMod, Escape, exec, lockScreenMadeByMe"
         #"$mainMod+Shift, F, exec, $scrPath/windowpin.sh"
         #"$mainMod, Backspace, exec, $scrPath/logoutlaunch.sh"
         "Ctrl+Alt, W, exec, waybar"
@@ -189,7 +195,7 @@
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
         #"$mainMod, ALT, mouse:272, resizewindow"
-        #bindm = ,mouse:274, movewindow
+        #bindm = ,mouse:274, movaewindow
         #bindm = ,mouse:272+mouse:273, movewindow
       ];
 

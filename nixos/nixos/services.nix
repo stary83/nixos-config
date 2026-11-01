@@ -1,27 +1,24 @@
 { pkgs, ... }: 
-{
+{ 
+
   services = {
 
-    displayManager = {
-      gdm.enable = true;
-      sddm.wayland.enable = true;
-      defaultSession = "niri";
-    };
-
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us"; # add ir for farsi
-        variant = "";
-        # options = "grp:alt_space_toggle";
-      };
-      # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
-    };
+    # xserver = {
+    #   enable = true;
+    #   xkb = {
+    #     layout = "us"; # add ir for farsi
+    #     variant = "";
+    #     # options = "grp:alt_space_toggle";
+    #   };
+    #   # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
+    # };
 
     # Enable CUPS to print documents.
     printing.enable = true;
 
     timesyncd.enable = true;
+
+    flatpak.enable = true;
 
     pipewire = {
       enable = true;

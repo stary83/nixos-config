@@ -14,7 +14,9 @@ either their files, or installation is not decalaritve:
 - prismlauncher instances
 - freetube
 - ssh keys
-- kdenlive
+- kdenlive (flatpak)
+- voicestudio (distrobox)
+- [tscap](https://github.com/francozanardi/tscaps) (docker)
 
 i use distrobox containers with setup hooks to manage these.
 

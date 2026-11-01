@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 { 
+  imports = [
+    ./powerMenuMadeByMe.nix # required for power button
+    ./lockScreenMadeByMe.nix
+  ];
   programs.waybar = {
     enable = true;
     systemd = {
@@ -9,10 +13,12 @@
     };
   };
   home.file.".config/waybar/config.jsonc" = {
-    source = ../../resources/dots/waybar/minimal1-dark/config.jsonc;
+    source = ../../resources/dots/waybar/config.jsonc;
   };
   home.file.".config/waybar/style.css" = {
-    source = ../../resources/dots/waybar/minimal1-dark/style.css;
+    source = ../../resources/dots/waybar/style.css;
   };
-
+  home.file.".config/waybar/colors.css" = {
+    source = ../../resources/dots/waybar/colors.css;
+  };
 }

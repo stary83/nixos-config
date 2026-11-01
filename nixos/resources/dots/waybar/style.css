@@ -1,223 +1,110 @@
 @import "colors.css";
+
 * {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
   border: none;
-  border-radius: 0px;
-  font-size: 16px;
-  font-family:
-    "CaskaydiaCove Nerd Font Mono", "CaskaydiaCove Nerd Font Mono", sans-serif;
+  border-radius: 0;
   min-height: 0;
-  margin: 0px;
-  padding: 0px;
 }
 
 window#waybar {
   background-color: @background;
-  transition-property: background-color;
-  transition-duration: .5s;
-
-}
-
-window#waybar.hidden {
-    opacity: 0;
-}
-
-tooltip {
-    background-color:  @background;
-    border-width: 3px;
-    border-style: solid;
-    border-color: @source_color;
-    color: @background;
+  color: @foreground;
+  opacity: 1;
 }
 
 #workspaces {
-  margin: 2px 1px 3px 1px;
-  padding: 1px 3px;
-  margin: 5px 5px;
-  margin-right: 2px;
-  border-radius: 20px;
-  margin-top:5px;
-  margin-bottom:5px;
-  border: 5px;
+  padding-right: 5px;
   font-style: normal;
-  opacity: 1;
-  font-size: 6px;
-  background-color: @primary;
 }
 
 #workspaces button {
-  padding: 1px 4px 1px 4px;
-  margin: 3px 2px 3px 2px;
-  border-radius: 20px;
-  border: 0px;
-  min-width:16px;
-  color: @background;
-  background-color: rgba(0, 0, 0, 0);
-  transition: all 0.25s ease-out;
+  padding: 0 5px;
+  color: @foreground;
+  background: transparent;
   opacity: 1;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 #workspaces button.active {
   color: @primary;
-  background: @on_secondary_fixed;
-  border-radius: 15px;
-  min-width: 58px;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
+  background: @selection;
 }
 
 #workspaces button.urgent {
-  background-color: @on_red;
-  color:@background;
-}
-
-
-#clock, #mpd  {
-    padding: 1px 3px;
-    color: @background;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#network, #bluetooth, #pulseaudio {
-    background: @primary
-}
-
-#network {
-    padding-left: 10px;
-    padding-top: 1px;
-    padding-right: 10px;
-    padding-bottom: 1px;
-    color: @background;
-    border-radius: 20px 20px 20px 20px;
-    margin-right: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#bluetooth {
-    padding-left: 10px;
-    padding-top: 1px;
-    padding-right: 10px;
-    padding-bottom: 1px;
-    color: @background;
-    border-radius: 20px 20px 20px 20px;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  color: @urgent;
 }
 
 #tray {
-    padding-left: 10px;
-    padding-right: 10px;
-    background: @surface_container;
-    border-radius: 20px 20px 20px 20px;
-    margin-top: 5px;
-    margin-left: 0px;
-    margin-bottom: 5px;
-    margin-right: 10px;
-    color: @primary;
+  padding: 0 5px;
+  background: @surface_container;
+  color: @foreground;
 }
 
-#clock {
-    padding-right: 20px;
-    background: @primary;
-    padding-left: 20px;
-    color: @background;
-    margin-right: 0px;
-    margin-left: 5px;
-    border-radius: 20px 20px 20px 20px;
+#custom-power {
+  padding-left: 10px;
+  padding-right: 5px;
+  color: @foreground;
 }
 
-#battery {
-    padding-right: 10px;
-    background: @primary;
-    padding-left: 10px;
-    color: @background;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 0px;
-    margin-left: 5px;
-    border-radius: 20px 20px 20px 20px;
+#custom-dns {
+  padding-left: 5px;
+  color: @foreground;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#window {
-    background: @primary;
-    color: @background;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    border-radius: 20px 20px 20px 20px;
-}
-
-window#window.empty{
-    background: @background;
+#clock,
+#cpu,
+#memory,
+#disk {
+  color: @foreground;
+  background-color: transparent;
 }
 
 #pulseaudio {
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 1px;
-    padding-top: 1px;
-    color: @background;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    margin-left: 0px;
-    border-radius: 20px 20px 20px 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @foreground;
 }
 
-#calendar {
-    padding-left: 15px;
-    padding-right: 15px;
-    background: @primary;
-    color: @background;
-    border-radius: 20px 20px 20px 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 0px
-
+#pulseaudio.warning,
+#pulseaudio.danger {
+  color: @urgent;
 }
 
-#custom-power, #custom-apps {
-    padding-left: 10px;
-    padding-top: 1px;
-    padding-right: 10px;
-    padding-bottom: 1px;
-    background: @primary;
-    color: @background;
-    border-radius: 20px 20px 20px 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 5px;
+#bluetooth {
+  padding-right: 7px;
+  color: @foreground;
 }
 
+#network {
+  padding-right: 7px;
+  padding-left: 3px;
+  color: @foreground;
+}
 
+#battery,
+#battery.charging,
+#battery.plugged {
+  color: @foreground;
+}
 
+@keyframes blink {
+  to {
+    color: @background;
+  }
+}
 
+#battery.critical:not(.charging) {
+  color: @urgent;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
+.modules-left,
+.modules-right {
+  padding: 0;
+}

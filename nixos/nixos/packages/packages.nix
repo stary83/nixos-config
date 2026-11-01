@@ -10,17 +10,21 @@ in {
     unstable.ghostty
     # -------------------------------------------------
 
-    inputs.prismlauncher.packages.${stdenv.hostPlatform.system}.prismlauncher
-    # inputs.matugen.packages.${stdenv.hostPlatform.system}.default
+    # inputs.prismlauncher.packages.${stdenv.hostPlatform.system}.prismlauncher
+    prismlauncher
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     
 
     brightnessctl # allows to control brightness
     playerctl # allows for video/audio playback control
     wl-clipboard # clipboard manager
+    wlr-randr
     clipse # clipboard manager
      
     jq # needed for the waybar script
     pavucontrol # audio control
+    # tuxguitar
+    # mupdf
     lua
     protonup-qt
     nuget-to-json

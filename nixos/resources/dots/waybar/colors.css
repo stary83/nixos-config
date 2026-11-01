@@ -1,0 +1,20 @@
+/* Catppuccin Mocha colors aligned with the Fuzzel launcher palette. */
+
+/* Fuzzel: background = #1E1E2EDD (alpha 221/255). */
+@define-color background rgba(30, 30, 46, 0.867);
+
+/* Fuzzel foreground and selection colors. */
+@define-color foreground #CDD6F4;
+@define-color primary #89B4FA;
+@define-color selection #585B70;
+@define-color border #89B4FA;
+
+/* Fuzzel prompt, placeholder, and counter colors. */
+@define-color prompt #BAC2DE;
+@define-color muted #7F849C;
+
+/* Additional Catppuccin Mocha surfaces and status colors. */
+@define-color background_alt #313244;
+@define-color surface_container #313244;
+@define-color active #A6E3A1;
+@define-color urgent #F38BA8;

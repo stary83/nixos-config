@@ -7,12 +7,7 @@
       # binfmt = true;
     };
 
-    firefox.enable = true;
-    
-    # configurations in home-manager
-    niri = {
-      enable = true;
-    };
+    # firefox.enable = true;
     
     # Gaming
     gamemode.enable = true;
@@ -33,13 +28,6 @@
       openFirewall = true;
     };
 
-    # --------- Hyprland ---------
-    # hyprland = {
-    #   enable = true;
-    #   package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
-    #   withUWSM = true;
-    # };
-    # ----------------------------
   };
 
 }
